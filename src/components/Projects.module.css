@@ -1,0 +1,133 @@
+.projectsSection {
+  padding: 5rem 0;
+  background: #fff;
+}
+
+.projectsTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: #222;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+
+.projectsTitle .accent {
+  background: linear-gradient(90deg, #91C8E4 0%, #E0AFA0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+}
+@media (min-width: 900px) {
+  .projectsGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.projectCard {
+  background: #f4f3ee;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 420px;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.projectCard:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  transform: translateY(-6px) scale(1.03);
+}
+
+.projectImg {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  object-position: top;
+  background: #fff;
+}
+
+.projectContent {
+  padding: 2rem 2rem 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.projectTitle {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.7rem;
+}
+
+.projectDesc {
+  color: #463F3A;
+  opacity: 0.92;
+  margin-bottom: 1.2rem;
+  font-size: 1.01rem;
+  line-height: 1.6;
+}
+
+.projectTags {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
+}
+
+.projectTag {
+  font-size: 0.95rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 999px;
+  background: #91C8E4;
+  color: #fff;
+  font-weight: 500;
+}
+.projectTag:nth-child(2) {
+  background: #E0AFA0;
+}
+.projectTag:nth-child(3) {
+  background: #91C8E4;
+}
+
+.projectLink {
+  color: #91C8E4;
+  font-weight: 500;
+  font-size: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.projectLink:hover {
+  color: #E0AFA0;
+}
+
+.showAllBtn {
+  display: inline-block;
+  background: #91C8E4;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 0.9rem 2.5rem;
+  border-radius: 12px;
+  margin-top: 2.5rem;
+  transition: background 0.2s;
+  text-align: center;
+  text-decoration: none;
+}
+.showAllBtn:hover {
+  background: #E0AFA0;
+  color: #fff;
+}

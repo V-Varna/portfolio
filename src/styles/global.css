@@ -1,0 +1,89 @@
+/* Light and dark mode root variables */
+/* Light and dark mode root variables */
+.light-mode {
+  --bg-primary: #F4F3EE;
+  --text-primary: #463F3A;
+  --accent: #91C8E4;
+  --secondary: #E0AFA0;
+  --card-bg: #FFFFFF;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+.dark-mode {
+  --bg-primary: #1B263B;
+  --text-primary: #E0E1DD;
+  --accent: #778DA9;
+  --secondary: #415A77;
+  --card-bg: #0D1B2A;
+  --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+body, .light-mode, .dark-mode {
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  transition: background 0.4s, color 0.4s;
+}
+/* Floating animation */
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Blur effect */
+.blur-load {
+  transition: filter 0.3s ease;
+}
+.blur-active {
+  filter: blur(8px);
+}
+
+/* Reveal effect */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles can go here */
+body {
+  font-family: 'Poppins', 'Raleway', 'sans-serif';
+}
+
+.theme-toggle-label {
+  cursor: pointer;
+  width: 50px;
+  height: 26px;
+  background: #E0E1DD;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+  transition: background 0.3s;
+}
+.theme-toggle-label:after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: #1B263B;
+  border-radius: 90px;
+  transition: transform 0.3s;
+}
+input[type="checkbox"].theme-toggle:checked + .theme-toggle-label {
+  background: #1B263B;
+}
+input[type="checkbox"].theme-toggle:checked + .theme-toggle-label:after {
+  background: #E0E1DD;
+  transform: translateX(24px);
+}

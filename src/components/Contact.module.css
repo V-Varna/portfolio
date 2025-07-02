@@ -1,0 +1,102 @@
+/* Social icon hover/focus for light theme */
+.socialIcon div {
+  transition: box-shadow 0.2s, background 0.2s;
+  box-shadow: 0 2px 8px 0 rgba(167, 214, 247, 0.12);
+}
+.socialIcon:hover div,
+.socialIcon:focus div {
+  background: #7fc6f7;
+  box-shadow: 0 4px 16px 0 rgba(127, 198, 247, 0.18);
+}
+.socialIcon:active div {
+  background: #5bb3e6;
+}
+.contactSection {
+  background: #f5f3ee;
+}
+
+.contactCard {
+  background: transparent;
+  border-radius: 1.5rem;
+}
+
+.heading {
+  color: #232323;
+  font-weight: 700;
+}
+.gradientText {
+  background: linear-gradient(90deg, #6bb7e3 0%, #e3b6b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+.experienceTitle {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 4rem;
+  color: #232323;
+}
+
+.accent {
+  background: linear-gradient(90deg, #6bb7e3 0%, #e3b6b0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+.label {
+  color: #232323;
+  font-weight: 500;
+}
+
+.input {
+  background: #fff;
+  border: 1.5px solid #a7cbe7;
+  border-radius: 1.5rem;
+  color: #232323;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #6bb7e3;
+  box-shadow: 0 0 0 2px #6bb7e355;
+}
+
+.button {
+  background: #a7d3f3;
+  color: #fff;
+  border-radius: 1.5rem;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.button:hover {
+  background: #6bb7e3;
+}
+
+.socialRow {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.socialIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: #a7d3f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.3rem;
+  transition: background 0.2s;
+}
+
+.socialIcon:hover {
+  background: #6bb7e3;
+}
