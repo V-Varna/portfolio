@@ -1,0 +1,803 @@
+/* ========================================
+   ACHIEVEMENTS SECTION
+======================================== */
+
+.achievementsSection {
+  position: relative;
+
+  padding: 110px 0 120px;
+
+  /*
+    SECTION BACKGROUND
+    Uses your portfolio's existing theme.
+  */
+  background-color: var(--bg-primary);
+
+  color: var(--text-primary);
+
+  overflow: hidden;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.sectionHeading {
+  text-align: center;
+
+  max-width: 760px;
+
+  margin: 0 auto 55px;
+}
+
+.sectionLabel {
+  display: inline-block;
+
+  padding: 5px 14px;
+
+  margin-bottom: 13px;
+
+  border-radius: 999px;
+
+  background: rgba(145, 200, 228, 0.18);
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.15em;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+
+  font-weight: 600;
+
+  line-height: 1.1;
+
+  color: var(--text-primary);
+}
+
+.sectionHeading h2 span {
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      var(--secondary)
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+.sectionHeading p {
+  margin: 16px auto 0;
+
+  max-width: 650px;
+
+  font-size: 1rem;
+
+  line-height: 1.7;
+
+  color: var(--text-primary);
+
+  opacity: 0.62;
+}
+
+
+/* ========================================
+   CAROUSEL WRAPPER
+======================================== */
+
+.carouselWrapper {
+  position: relative;
+
+  max-width: 1320px;
+
+  margin: 0 auto;
+
+  min-height: 440px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* ========================================
+   CAROUSEL
+======================================== */
+
+.carousel {
+  position: relative;
+
+  width: 100%;
+
+  height: 440px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+
+/* ========================================
+   ACHIEVEMENT CARD
+======================================== */
+
+.achievementCard {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  width: 260px;
+
+  min-height: 335px;
+
+  padding: 25px 24px 23px;
+
+  border-radius: 18px;
+
+  border: 1px solid rgba(128, 128, 128, 0.10);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  text-align: center;
+
+  /*
+    CENTER CARD
+    Your requested --card-bg.
+  */
+  background-color: var(--card-bg);
+
+  color: var(--text-primary);
+
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.06);
+
+  transform:
+    translate(-50%, -50%)
+    scale(0.65);
+
+  opacity: 0;
+
+  pointer-events: none;
+
+  transition:
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.6s ease,
+    background-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+/* ========================================
+   SIDE CARD COLORS
+======================================== */
+
+/*
+  The side cards intentionally use a color
+  between --bg-primary and --card-bg.
+
+  color-mix allows this to adapt automatically
+  in both light and dark themes.
+*/
+
+.position-1,
+.position-2,
+.position-3,
+.position-4 {
+  background-color:
+    color-mix(
+      in srgb,
+      var(--bg-primary) 45%,
+      var(--card-bg) 55%
+    );
+}
+
+
+/* ========================================
+   CENTER CARD
+======================================== */
+
+.position0 {
+  z-index: 5;
+
+  width: 300px;
+
+  min-height: 375px;
+
+  transform:
+    translate(-50%, -50%)
+    scale(1);
+
+  opacity: 1;
+
+  pointer-events: auto;
+
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.10);
+}
+
+
+/* ========================================
+   LEFT SIDE
+======================================== */
+
+.position-1 {
+  z-index: 4;
+
+  transform:
+    translate(calc(-50% - 285px), -50%)
+    scale(0.88);
+
+  opacity: 0.92;
+
+  pointer-events: auto;
+}
+
+
+/* ========================================
+   RIGHT SIDE
+======================================== */
+
+.position1 {
+  z-index: 4;
+
+  transform:
+    translate(calc(-50% + 285px), -50%)
+    scale(0.88);
+
+  opacity: 0.92;
+
+  pointer-events: auto;
+}
+
+
+/* ========================================
+   FAR LEFT
+======================================== */
+
+.position-2 {
+  z-index: 2;
+
+  transform:
+    translate(calc(-50% - 540px), -50%)
+    scale(0.72);
+
+  opacity: 0.70;
+
+  pointer-events: auto;
+}
+
+
+/* ========================================
+   FAR RIGHT
+======================================== */
+
+.position2 {
+  z-index: 2;
+
+  transform:
+    translate(calc(-50% + 540px), -50%)
+    scale(0.72);
+
+  opacity: 0.70;
+
+  pointer-events: auto;
+}
+
+
+/* ========================================
+   CATEGORY
+======================================== */
+
+.category {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  padding: 4px 11px;
+
+  margin-bottom: 15px;
+
+  border-radius: 999px;
+
+  background: rgba(145, 200, 228, 0.16);
+
+  color: var(--accent);
+
+  font-size: 0.62rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================
+   PEACH CATEGORY
+======================================== */
+
+.peach .category {
+  background:
+    rgba(224, 175, 160, 0.18);
+
+  color: var(--secondary);
+}
+
+
+/* ========================================
+   ACHIEVEMENT ICON
+======================================== */
+
+.achievementIcon {
+  width: 58px;
+  height: 58px;
+
+  margin-bottom: 17px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    rgba(145, 200, 228, 0.16);
+
+  color: var(--accent);
+
+  font-size: 1.35rem;
+
+  transition:
+    transform 0.4s ease,
+    background-color 0.4s ease;
+}
+
+
+.peach .achievementIcon {
+  background:
+    rgba(224, 175, 160, 0.17);
+
+  color: var(--secondary);
+}
+
+
+.position0:hover .achievementIcon {
+  transform: translateY(-3px);
+}
+
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.cardContent {
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+
+.cardContent h3 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 1.15rem;
+
+  font-weight: 600;
+
+  line-height: 1.35;
+}
+
+
+.subtitle {
+  margin-top: 4px;
+
+  color: var(--accent);
+
+  font-size: 0.82rem;
+
+  font-weight: 500;
+}
+
+
+.cardContent p {
+  margin: 15px 0 0;
+
+  color: var(--text-primary);
+
+  opacity: 0.70;
+
+  font-size: 0.84rem;
+
+  line-height: 1.65;
+}
+
+
+/* ========================================
+   LINKS
+======================================== */
+
+.cardLinks {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 18px;
+}
+
+
+.cardLink {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 10px;
+
+  border-radius: 999px;
+
+  color: var(--accent);
+
+  background:
+    rgba(145, 200, 228, 0.08);
+
+  font-size: 0.74rem;
+
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+.cardLink:hover {
+  color: var(--text-primary);
+
+  background:
+    rgba(145, 200, 228, 0.18);
+
+  transform: translateY(-2px);
+}
+
+
+.externalIcon {
+  font-size: 0.58rem;
+}
+
+
+/* ========================================
+   NAVIGATION BUTTONS
+======================================== */
+
+.navigationButton {
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 10;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+
+  border: 1px solid rgba(128, 128, 128, 0.15);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background:
+    var(--card-bg);
+
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  box-shadow:
+    0 5px 18px rgba(0, 0, 0, 0.07);
+
+  transition:
+    transform 0.25s ease,
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+
+.navigationButton:hover {
+  transform:
+    translateY(-50%)
+    scale(1.08);
+
+  color: var(--accent);
+}
+
+
+.previousButton {
+  left: 0;
+}
+
+
+.nextButton {
+  right: 0;
+}
+
+
+/* ========================================
+   PAGINATION
+======================================== */
+
+.pagination {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 22px;
+}
+
+
+.dot {
+  width: 9px;
+  height: 9px;
+
+  padding: 0;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background:
+    rgba(128, 128, 128, 0.30);
+
+  cursor: pointer;
+
+  transition:
+    width 0.3s ease,
+    background-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.dot:hover {
+  transform: scale(1.15);
+}
+
+
+.activeDot {
+  width: 11px;
+  height: 11px;
+
+  background: var(--accent);
+}
+
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1100px) {
+
+  .carouselWrapper {
+    min-height: 420px;
+  }
+
+  .carousel {
+    height: 420px;
+  }
+
+  /*
+    Tablet shows 3 cards.
+    Far cards are hidden.
+  */
+
+  .position-2,
+  .position2 {
+    opacity: 0;
+
+    pointer-events: none;
+  }
+
+  .position-1 {
+    transform:
+      translate(calc(-50% - 235px), -50%)
+      scale(0.82);
+  }
+
+  .position1 {
+    transform:
+      translate(calc(-50% + 235px), -50%)
+      scale(0.82);
+  }
+
+  .navigationButton {
+    width: 42px;
+    height: 42px;
+  }
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+  .achievementsSection {
+    padding: 85px 0 95px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 35px;
+  }
+
+  .sectionHeading p {
+    font-size: 0.91rem;
+  }
+
+
+  .carouselWrapper {
+    min-height: 430px;
+
+    padding: 0 5px;
+  }
+
+  .carousel {
+    height: 430px;
+  }
+
+
+  /*
+    Mobile shows ONLY the center card.
+  */
+
+  .achievementCard {
+    width: min(88vw, 340px);
+
+    min-height: 350px;
+
+    padding: 25px 22px;
+  }
+
+
+  .position0 {
+    width: min(88vw, 340px);
+
+    min-height: 365px;
+
+    transform:
+      translate(-50%, -50%)
+      scale(1);
+
+    opacity: 1;
+  }
+
+
+  .position-1,
+  .position1,
+  .position-2,
+  .position2 {
+    transform:
+      translate(-50%, -50%)
+      scale(0.92);
+
+    opacity: 0;
+
+    pointer-events: none;
+  }
+
+
+  .navigationButton {
+    width: 40px;
+    height: 40px;
+
+    background:
+      color-mix(
+        in srgb,
+        var(--bg-primary) 45%,
+        var(--card-bg) 55%
+      );
+  }
+
+
+  .previousButton {
+    left: 3px;
+  }
+
+  .nextButton {
+    right: 3px;
+  }
+
+
+  .cardContent h3 {
+    font-size: 1.1rem;
+  }
+
+  .cardContent p {
+    font-size: 0.84rem;
+  }
+}
+
+
+/* ========================================
+   SMALL PHONES
+======================================== */
+
+@media (max-width: 400px) {
+
+  .achievementCard {
+    width: 84vw;
+
+    min-height: 345px;
+
+    padding: 22px 18px;
+  }
+
+  .position0 {
+    width: 84vw;
+  }
+
+  .navigationButton {
+    width: 35px;
+    height: 35px;
+
+    font-size: 0.75rem;
+  }
+
+  .previousButton {
+    left: 0;
+  }
+
+  .nextButton {
+    right: 0;
+  }
+}
