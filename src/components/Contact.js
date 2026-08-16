@@ -1,75 +1,309 @@
-
 import React from 'react';
-import { FaEnvelope, FaPhoneAlt, FaLinkedin, FaBehance, FaDribbble, FaTwitter } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaLinkedin,
+  FaGithub,
+  FaPaperPlane,
+  FaUser,
+  FaPen
+} from 'react-icons/fa';
+
 import styles from './Contact.module.css';
 
 export default function Contact() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const email = e.target.email.value;
+    const message = e.target.message.value;
+
+    const subject = encodeURIComponent(
+      `Portfolio Contact from ${name}`
+    );
+
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    );
+
+    window.location.href =
+      `mailto:v2005varna@gmail.com?subject=${subject}&body=${body}`;
+  };
+
   return (
-    <section id="contact" className="py-20 bg-[#f4f2ec]">
-      <div className="container mx-auto px-6">
-        <h2 className={styles.experienceTitle}>
-          Let's <span className={styles.accent}>Connect</span>
-        </h2>
-        <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 reveal">
-          <div>
-            <h3 className="text-2xl font-semibold mb-6 text-[#232323]">Get in Touch</h3>
-            <p className="text-[#6b6b6b] opacity-90 mb-8">
-              Have a project in mind or want to discuss potential collaborations? I'd love to hear from you!
-            </p>
-            <div className="flex items-center mb-4">
-              <div className="w-10 h-10 flex items-center justify-center bg-[#a7d6f7] rounded-full mr-4">
-                <FaEnvelope className="text-white text-xl" />
-              </div>
-              <a href="mailto:varna@designportfolio.com" className="text-[#232323] hover:text-primary transition-colors duration-300">varna@designportfolio.com</a>
-            </div>
-            <div className="flex items-center mb-8">
-              <div className="w-10 h-10 flex items-center justify-center bg-[#a7d6f7] rounded-full mr-4">
-                <FaPhoneAlt className="text-white text-lg" />
-              </div>
-              <a href="tel:+1234567890" className="text-[#232323] hover:text-primary transition-colors duration-300">+1 (234) 567-890</a>
-            </div>
-            <div className="flex space-x-4 mt-2">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className={styles.socialIcon}>
-                <div className="w-10 h-10 flex items-center justify-center bg-[#a7d6f7] rounded-full">
-                  <FaLinkedin className="text-white text-xl" />
-                </div>
-              </a>
-              <a href="https://behance.net" target="_blank" rel="noopener noreferrer" aria-label="Behance" className={styles.socialIcon}>
-                <div className="w-10 h-10 flex items-center justify-center bg-[#a7d6f7] rounded-full">
-                  <FaBehance className="text-white text-xl" />
-                </div>
-              </a>
-              <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer" aria-label="Dribbble" className={styles.socialIcon}>
-                <div className="w-10 h-10 flex items-center justify-center bg-[#a7d6f7] rounded-full">
-                  <FaDribbble className="text-white text-xl" />
-                </div>
-              </a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className={styles.socialIcon}>
-                <div className="w-10 h-10 flex items-center justify-center bg-[#a7d6f7] rounded-full">
-                  <FaTwitter className="text-white text-xl" />
-                </div>
-              </a>
-            </div>
+    <section id="contact" className={styles.contactSection}>
+
+      {/* Decorative background elements */}
+      <div className={styles.decorativeShape}></div>
+      <div className={styles.decorativeGlow}></div>
+
+      <div className={styles.container}>
+
+        {/* =========================================
+            SECTION TITLE
+           ========================================= */}
+
+        <div className={styles.headingWrapper}>
+
+          <h2 className={styles.experienceTitle}>
+            Let's <span>Connect</span>
+          </h2>
+
+          <div className={styles.headingUnderline}>
+            <span></span>
+            <i></i>
           </div>
-          <div>
-            <form>
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-[#232323] mb-2">Name</label>
-                <input type="text" id="name" className="w-full px-4 py-3 rounded-button border-none bg-white focus:ring-2 focus:ring-primary text-[#232323]" placeholder="Your name" />
-              </div>
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-[#232323] mb-2">Email</label>
-                <input type="email" id="email" className="w-full px-4 py-3 rounded-button border-none bg-white focus:ring-2 focus:ring-primary text-[#232323]" placeholder="Your email" />
-              </div>
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-[#232323] mb-2">Message</label>
-                <textarea id="message" rows="5" className="w-full px-4 py-3 rounded-button border-none bg-white focus:ring-2 focus:ring-primary text-[#232323]" placeholder="Your message"></textarea>
-              </div>
-              <button type="submit" className="w-full bg-[#a7d6f7] text-white px-6 py-3 rounded-button font-medium hover:bg-opacity-90 transition-all duration-300 whitespace-nowrap shadow-md">Send Message</button>
-            </form>
-          </div>
+
         </div>
+
+
+        {/* =========================================
+            MAIN CONTENT
+           ========================================= */}
+
+        <div className={styles.contactGrid}>
+
+          {/* =======================================
+              LEFT SIDE
+             ======================================= */}
+
+          <div className={styles.contactInfo}>
+
+            {/* Let's Talk Badge */}
+
+            <div className={styles.talkBadge}>
+              <FaPaperPlane />
+              <span>LET'S TALK</span>
+            </div>
+
+
+            <h3 className={styles.getInTouch}>
+              Get in Touch
+            </h3>
+
+            <p className={styles.introText}>
+              Have a project in mind or want to discuss a potential
+              opportunity or collaboration? I'd love to hear from you!
+            </p>
+
+
+            {/* =====================================
+                EMAIL CARD
+               ===================================== */}
+
+            <a
+              href="mailto:v2005varna@gmail.com"
+              className={styles.emailCard}
+            >
+
+              <div className={styles.contactIcon}>
+                <FaEnvelope />
+              </div>
+
+              <div className={styles.emailContent}>
+
+                <span className={styles.smallLabel}>
+                  EMAIL ME
+                </span>
+
+                <strong>
+                  v2005varna@gmail.com
+                </strong>
+
+              </div>
+
+            </a>
+
+
+            {/* =====================================
+                SOCIAL SECTION
+               ===================================== */}
+
+            <div className={styles.connectHeader}>
+              <span>CONNECT WITH ME</span>
+              <div></div>
+            </div>
+
+
+            {/* LinkedIn */}
+
+            <a
+              href="https://www.linkedin.com/in/varna-vanamala/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialCard}
+            >
+
+              <div className={styles.socialIcon}>
+                <FaLinkedin />
+              </div>
+
+              <div className={styles.socialInfo}>
+                <strong>LinkedIn</strong>
+                <span>
+                  linkedin.com/in/varna-vanamala/
+                </span>
+              </div>
+
+              <span className={styles.arrow}>
+                ↗
+              </span>
+
+            </a>
+
+
+            {/* GitHub */}
+
+            <a
+              href="https://github.com/V-Varna"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialCard}
+            >
+
+              <div className={styles.socialIcon}>
+                <FaGithub />
+              </div>
+
+              <div className={styles.socialInfo}>
+                <strong>GitHub</strong>
+                <span>
+                  github.com/V-Varna
+                </span>
+              </div>
+
+              <span className={styles.arrow}>
+                ↗
+              </span>
+
+            </a>
+
+
+            {/* =====================================
+                BOTTOM MESSAGE
+               ===================================== */}
+
+            <div className={styles.handwritten}>
+              Let's build something amazing together!
+              <span>♡</span>
+            </div>
+
+            <div className={styles.handwrittenLine}></div>
+
+          </div>
+
+
+          {/* =======================================
+              RIGHT SIDE — CONTACT FORM
+             ======================================= */}
+
+          <div className={styles.formCard}>
+
+            <h3 className={styles.formTitle}>
+              Send a Message
+            </h3>
+
+
+            <form onSubmit={handleSubmit}>
+
+              {/* Name */}
+
+              <div className={styles.formGroup}>
+
+                <label htmlFor="name">
+                  Name
+                </label>
+
+                <div className={styles.inputWrapper}>
+
+                  <FaUser />
+
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder="Your name"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+
+              {/* Email */}
+
+              <div className={styles.formGroup}>
+
+                <label htmlFor="email">
+                  Email
+                </label>
+
+                <div className={styles.inputWrapper}>
+
+                  <FaEnvelope />
+
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Your email"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+
+              {/* Message */}
+
+              <div className={styles.formGroup}>
+
+                <label htmlFor="message">
+                  Message
+                </label>
+
+                <div className={`${styles.inputWrapper} ${styles.textareaWrapper}`}>
+
+                  <FaPen />
+
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="6"
+                    placeholder="Your message"
+                    required
+                  />
+
+                </div>
+
+              </div>
+
+
+              {/* Submit */}
+
+              <button
+                type="submit"
+                className={styles.sendButton}
+              >
+
+                <FaPaperPlane />
+
+                <span>
+                  Send Message
+                </span>
+
+              </button>
+
+            </form>
+
+          </div>
+
+        </div>
+
       </div>
+
     </section>
   );
 }

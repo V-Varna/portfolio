@@ -1,0 +1,383 @@
+/* =========================================================
+   ALL PROJECTS PAGE
+   ========================================================= */
+
+.allProjectsPage {
+  position: relative;
+
+  min-height: 100vh;
+
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+
+  padding-bottom: 5rem;
+}
+.themeToggle {
+  position: absolute;
+
+  top: 1.5rem;
+  right: 3rem;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 100;
+}
+
+.themeToggle button {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   TOP BAR
+   ========================================================= */
+
+.topBar {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+
+  padding-top: 2rem;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: var(--accent);
+
+  font-size: 1rem;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.backButton:hover {
+  color: var(--secondary);
+  transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   PAGE HEADING
+   ========================================================= */
+
+.headingSection {
+  width: min(900px, 92%);
+
+  margin: 0 auto;
+
+  padding: 4rem 0 3.5rem;
+
+  text-align: center;
+}
+
+.pageTitle {
+  margin: 0 0 1rem;
+
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1.1;
+
+  font-weight: 800;
+  letter-spacing: -1px;
+
+  color: var(--text-primary);
+}
+
+.pageTitle span {
+  background: linear-gradient(
+    90deg,
+    var(--accent),
+    var(--secondary)
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.pageDescription {
+  max-width: 680px;
+
+  margin: 0 auto;
+
+  color: var(--text-primary);
+
+  opacity: 0.72;
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+
+/* =========================================================
+   PROJECTS GRID
+   ========================================================= */
+
+.projectsSection {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+.projectsGrid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
+}
+
+
+/* =========================================================
+   PROJECT CARD
+   ========================================================= */
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+
+  min-height: 440px;
+
+  background: var(--card-bg);
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--text-primary) 8%,
+      transparent
+    );
+
+  border-radius: 18px;
+
+  box-shadow: var(--card-shadow);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.4s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================================
+   PROJECT IMAGE
+   ========================================================= */
+
+.imageWrapper {
+  width: 100%;
+
+  overflow: hidden;
+
+  background: var(--card-bg);
+}
+
+.projectImage {
+  display: block;
+
+  width: 100%;
+  height: 210px;
+
+  object-fit: cover;
+  object-position: top;
+
+  transition: transform 0.35s ease;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.03);
+}
+
+
+/* =========================================================
+   PROJECT CONTENT
+   ========================================================= */
+
+.projectContent {
+  display: flex;
+  flex-direction: column;
+
+  flex: 1;
+
+  padding: 1.5rem 1.6rem 1.4rem;
+}
+
+.projectTitle {
+  margin: 0 0 0.7rem;
+
+  color: var(--text-primary);
+
+  font-size: 1.2rem;
+  line-height: 1.35;
+
+  font-weight: 700;
+}
+
+.projectDescription {
+  margin: 0 0 1.2rem;
+
+  color: var(--text-primary);
+
+  opacity: 0.72;
+
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+
+
+/* =========================================================
+   TECHNOLOGY TAGS
+   ========================================================= */
+
+.projectTags {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 0.45rem;
+
+  margin-bottom: 1.3rem;
+}
+
+.projectTag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 30px;
+
+  padding: 0.35rem 0.8rem;
+
+  border-radius: 999px;
+
+  background: var(--accent);
+
+  color: #ffffff;
+
+  font-size: 0.78rem;
+  font-weight: 500;
+
+  transition:
+    background 0.3s ease,
+    transform 0.2s ease;
+}
+
+.projectTag:nth-child(even) {
+  background: var(--secondary);
+}
+
+.projectTag:hover {
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   VIEW PROJECT
+   ========================================================= */
+
+.viewProject {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 0.35rem;
+
+  margin-top: auto;
+
+  color: var(--accent);
+
+  font-size: 0.98rem;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    gap 0.2s ease;
+}
+
+.viewProject:hover {
+  color: var(--secondary);
+
+  gap: 0.6rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+@media (max-width: 650px) {
+    .themeToggle {
+  top: 1rem;
+  right: 1.5rem;
+}
+
+  .topBar {
+    padding-top: 1.25rem;
+  }
+
+  .headingSection {
+    padding: 3rem 0 2.5rem;
+  }
+
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+
+  .pageDescription {
+    font-size: 0.98rem;
+  }
+
+  .projectsGrid {
+    grid-template-columns: 1fr;
+
+    gap: 1.5rem;
+  }
+
+  .projectCard {
+    min-height: auto;
+  }
+
+  .projectImage {
+    height: 200px;
+  }
+
+}

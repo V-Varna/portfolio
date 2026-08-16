@@ -1,37 +1,124 @@
 import React from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import styles from './Footer.module.css';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="py-12 bg-white dark:bg-card-bg">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-8 md:mb-0">
-            <h2 className="text-2xl font-pacifico text-primary mb-4">Varna</h2>
-            <p className="text-lightText dark:text-darkText opacity-80 max-w-md">
-              Creating intuitive and beautiful digital experiences through thoughtful design and research.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-x-12 gap-y-4">
-            <a href="#home" className="text-lightText dark:text-darkText hover:text-primary transition-colors duration-300">Home</a>
-            <a href="#expertise" className="text-lightText dark:text-darkText hover:text-primary transition-colors duration-300">Expertise</a>
-            <a href="#experience" className="text-lightText dark:text-darkText hover:text-primary transition-colors duration-300">Experience</a>
-            <a href="#projects" className="text-lightText dark:text-darkText hover:text-primary transition-colors duration-300">Projects</a>
-            <a href="#contact" className="text-lightText dark:text-darkText hover:text-primary transition-colors duration-300">Contact</a>
-            <a href="#" className="text-lightText dark:text-darkText hover:text-primary transition-colors duration-300">Resume</a>
-          </div>
+    <footer className={styles.footer}>
+
+      <div className={styles.footerContainer}>
+
+        {/* ================================
+            BRAND
+           ================================ */}
+
+        <div className={styles.brandSection}>
+
+          <h2 className={styles.brandName}>
+            Varna <span>Vanamala</span>
+          </h2>
+
+          <p className={styles.tagline}>
+            Building thoughtful digital experiences
+            with code, creativity, and curiosity.
+          </p>
+
         </div>
-        <div className="border-t border-lightText dark:border-darkText border-opacity-10 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-lightText dark:text-darkText opacity-60 mb-4 md:mb-0">© 2025 Varna. All rights reserved.</p>
-          <div className="flex space-x-4">
-            {/* Social icons here */}
+
+
+        {/* ================================
+            QUICK LINKS
+           ================================ */}
+
+        <div className={styles.linksSection}>
+
+          <h3>Quick Links</h3>
+
+          <div className={styles.links}>
+
+            <a href="#home">Home</a>
+
+            <a href="#expertise">Expertise</a>
+
+            <a href="#experience">Experience</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#contact">Contact</a>
+
           </div>
+
         </div>
+
+
+        {/* ================================
+            CONNECT
+           ================================ */}
+
+        <div className={styles.connectSection}>
+
+          <h3>Let's Connect</h3>
+
+          <div className={styles.socialLinks}>
+
+            <a
+              href="mailto:v2005varna@gmail.com"
+              aria-label="Email"
+              className={styles.socialIcon}
+            >
+              <FaEnvelope />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/varna-vanamala/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className={styles.socialIcon}
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="https://github.com/V-Varna"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className={styles.socialIcon}
+            >
+              <FaGithub />
+            </a>
+
+          </div>
+
+        </div>
+
       </div>
-      <div className="fixed bottom-8 right-8 z-50">
-        <a href="#home" className="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300">
-          ↑
-        </a>
+
+
+      {/* ================================
+          DIVIDER
+         ================================ */}
+
+      <div className={styles.divider}></div>
+
+
+      {/* ================================
+          BOTTOM
+         ================================ */}
+
+      <div className={styles.footerBottom}>
+
+        <p>
+          © {currentYear} Varna Vanamala. All rights reserved.
+        </p>
+
+        
+
       </div>
+
     </footer>
   );
 }

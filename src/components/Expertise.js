@@ -36,6 +36,7 @@ const expertise = [
       'Responsive Design',
       'Wireframing',
       'Prototyping',
+      'UX Analysis'
     ],
   },
   {
@@ -91,6 +92,7 @@ export default function Expertise() {
   const [visibleCards, setVisibleCards] = useState(new Set());
 
   const cardRefs = useRef([]);
+  const sectionRef = useRef(null);
 
   /*
    * Observe each card individually.
@@ -129,6 +131,25 @@ export default function Expertise() {
       observers.forEach((observer) => observer.disconnect());
     };
   }, []);
+    // Close any opened card when clicking/tapping outside the expertise cards
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      const clickedInsideCard = cardRefs.current.some(
+        (card) => card && card.contains(event.target)
+      );
+
+      if (!clickedInsideCard) {
+        setActiveCard(null);
+        setHoveredCard(null);
+      }
+    };
+
+    document.addEventListener('pointerdown', handleOutsideClick);
+
+    return () => {
+      document.removeEventListener('pointerdown', handleOutsideClick);
+    };
+  }, []);
 
   const handleCardClick = (index) => {
     setActiveCard((current) =>
@@ -151,12 +172,26 @@ export default function Expertise() {
 
         {/* Section Heading */}
         <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-14">
-          <h2 className="text-4xl font-bold sm:text-5xl">
-            My{' '}
-            <span className="gradient-text">
-              Expertise
-            </span>
-          </h2>
+<h2
+  className="text-4xl font-bold sm:text-5xl"
+  style={{
+    color: 'var(--text-primary)',
+  }}
+>
+  My{' '}
+  <span
+    style={{
+      background:
+        'linear-gradient(90deg, var(--accent), var(--secondary))',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+      color: 'transparent',
+    }}
+  >
+    Expertise
+  </span>
+</h2>
         </div>
 
         {/* Expertise Cards */}

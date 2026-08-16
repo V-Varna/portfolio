@@ -1,6 +1,8 @@
 .projectsSection {
   padding: 5rem 0;
-  background: #ffffff;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 .projectsTitle {
@@ -8,16 +10,22 @@
   font-weight: 900;
   text-align: center;
   margin-bottom: 3.5rem;
-  color: #222;
+  color: var(--text-primary);
   letter-spacing: 0.5px;
   line-height: 1.1;
 }
 
 .projectsTitle .accent {
-  background: linear-gradient(90deg, #91C8E4 0%, #E0AFA0 100%);
+  background: linear-gradient(
+    90deg,
+    var(--accent) 0%,
+    var(--secondary) 100%
+  );
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+
   color: transparent;
   font-weight: 900;
   letter-spacing: 1px;
@@ -28,37 +36,65 @@
   grid-template-columns: 1fr;
   gap: 2.5rem;
 }
+
 @media (min-width: 900px) {
   .projectsGrid {
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
+
+/* ================================
+   PROJECT CARD
+   ================================ */
+
 .projectCard {
-  background: #f4f3ee;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+
   border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  box-shadow: var(--card-shadow);
+
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 420px;
-  transition: box-shadow 0.2s, transform 0.2s;
+
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s,
+    background-color 0.4s ease,
+    color 0.4s ease;
 }
+
 .projectCard:hover {
-  box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
   transform: translateY(-6px) scale(1.03);
 }
+
+
+/* ================================
+   PROJECT IMAGE
+   ================================ */
 
 .projectImg {
   width: 100%;
   height: 200px;
+
   object-fit: cover;
   object-position: top;
-  background: #fff;
+
+  background: var(--card-bg);
 }
+
+
+/* ================================
+   PROJECT CONTENT
+   ================================ */
 
 .projectContent {
   padding: 2rem 2rem 1.5rem 2rem;
+
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -67,67 +103,243 @@
 .projectTitle {
   font-size: 1.18rem;
   font-weight: 700;
-  color: #222;
+
+  color: var(--text-primary);
+
   margin-bottom: 0.7rem;
 }
 
 .projectDesc {
-  color: #463F3A;
+  color: var(--text-primary);
   opacity: 0.92;
+
   margin-bottom: 1.2rem;
+
   font-size: 1.01rem;
   line-height: 1.6;
 }
 
+
+/* ================================
+   PROJECT TAGS
+   ================================ */
+
 .projectTags {
-  display: flex;
-  gap: 0.7rem;
-  margin-bottom: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projectTag {
   font-size: 0.95rem;
+
   padding: 0.4rem 1.2rem;
+
   border-radius: 999px;
-  background: #91C8E4;
+
+  background: var(--accent);
   color: #fff;
+
   font-weight: 500;
-}
-.projectTag:nth-child(2) {
-  background: #E0AFA0;
-}
-.projectTag:nth-child(3) {
-  background: #91C8E4;
 }
 
+.projectTag:nth-child(2) {
+  background: var(--secondary);
+}
+
+.projectTag:nth-child(3) {
+  background: var(--accent);
+}
+
+.projectTag:nth-child(4) {
+  background: var(--accent);
+}
+
+
+/* ================================
+   VIEW PROJECT
+   ================================ */
+
 .projectLink {
-  color: #91C8E4;
+  color: var(--accent);
+
   font-weight: 500;
   font-size: 1.05rem;
+
   display: inline-flex;
   align-items: center;
+
   gap: 0.3rem;
+
   text-decoration: none;
+
   transition: color 0.2s;
 }
+
 .projectLink:hover {
-  color: #E0AFA0;
+  color: var(--secondary);
 }
+
+
+/* ================================
+   SHOW ALL PROJECTS
+   ================================ */
 
 .showAllBtn {
   display: inline-block;
-  background: #91C8E4;
+
+  background: var(--accent);
   color: #fff;
+
   font-weight: 600;
   font-size: 1.08rem;
+
   padding: 0.9rem 2.5rem;
+
   border-radius: 12px;
+
   margin-top: 2.5rem;
-  transition: background 0.2s;
+
+  transition:
+    background 0.2s,
+    color 0.2s;
+
   text-align: center;
   text-decoration: none;
 }
+
 .showAllBtn:hover {
-  background: #E0AFA0;
+  background: var(--secondary);
   color: #fff;
+}
+
+
+/* ================================
+   PROJECT CAROUSEL
+   ================================ */
+
+.projectsCarousel {
+  position: relative;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.projectsCarousel .projectsGrid {
+  width: 100%;
+}
+
+
+/* ================================
+   CAROUSEL ARROWS
+   ================================ */
+
+.carouselArrow {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 58px;
+  height: 58px;
+
+  border: 1px solid transparent;
+  border-radius: 50%;
+
+  background: var(--card-bg);
+  color: var(--accent);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.7rem;
+  font-weight: 400;
+
+  cursor: pointer;
+
+  box-shadow: var(--card-shadow);
+
+  z-index: 10;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+
+/* Left arrow */
+
+.carouselArrowLeft {
+  left: -28px;
+}
+
+
+/* Right arrow */
+
+.carouselArrowRight {
+  right: -28px;
+}
+
+
+/* Arrow hover */
+
+.carouselArrow:hover {
+  transform: translateY(-50%) scale(1.08);
+
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+
+  background: var(--bg-primary);
+}
+
+
+/* Arrow press */
+
+.carouselArrow:active {
+  transform: translateY(-50%) scale(0.96);
+}
+
+
+/* ================================
+   RESPONSIVE
+   ================================ */
+
+@media (max-width: 900px) {
+  .carouselArrow {
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+  }
+
+  .carouselArrowLeft {
+    left: -18px;
+  }
+
+  .carouselArrowRight {
+    right: -18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .projectsCarousel {
+    padding: 0 12px;
+  }
+
+  .carouselArrow {
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+  }
+
+  .carouselArrowLeft {
+    left: -2px;
+  }
+
+  .carouselArrowRight {
+    right: -2px;
+  }
 }

@@ -1,0 +1,968 @@
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.heroSection {
+  position: relative;
+
+  min-height: 680px;
+
+  padding: 7rem 0 5rem;
+
+  background: var(--bg-primary);
+
+  color: var(--text-primary);
+
+  overflow: hidden;
+
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+}
+
+
+/* =========================================================
+   CONTAINER
+   ========================================================= */
+
+.heroContainer {
+  width: min(1180px, 92%);
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+
+  align-items: center;
+
+  gap: 4rem;
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+   ========================================================= */
+
+.heroContent {
+  position: relative;
+
+  max-width: 650px;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   EYEBROW
+   ========================================================= */
+
+.eyebrow {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.55rem;
+
+  margin-bottom: 1.25rem;
+
+  padding: 0.45rem 0.85rem;
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--accent) 35%,
+      transparent
+    );
+
+  border-radius: 999px;
+
+  color: var(--accent);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1.8px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--accent) 6%,
+      transparent
+    );
+}
+
+
+.eyebrowDot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 0 4px
+    color-mix(
+      in srgb,
+      var(--accent) 12%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   MAIN TITLE
+   ========================================================= */
+
+.heroTitle {
+  margin: 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  font-size: clamp(3.5rem, 7vw, 6rem);
+
+  line-height: 0.98;
+
+  font-weight: 800;
+
+  letter-spacing: -3px;
+
+  color: var(--text-primary);
+}
+
+
+.heroTitle span {
+  background:
+    linear-gradient(
+      100deg,
+      var(--accent),
+      var(--secondary)
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* =========================================================
+   ROLE
+   ========================================================= */
+
+.roleLine {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 0.65rem;
+
+  margin-top: 1.5rem;
+
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem);
+
+  line-height: 1.4;
+}
+
+
+.rolePrimary {
+  color: var(--text-primary);
+
+  font-weight: 600;
+}
+
+
+.roleSecondary {
+  color: var(--text-primary);
+
+  opacity: 0.62;
+
+  font-weight: 500;
+}
+
+
+.roleDivider {
+  color: var(--accent);
+
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   TITLE ACCENT
+   ========================================================= */
+
+.titleAccent {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.4rem;
+
+  margin-top: 1.3rem;
+}
+
+
+.titleAccent span:first-child {
+  width: 65px;
+  height: 4px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent),
+      var(--secondary)
+    );
+}
+
+
+.titleAccent span:last-child {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: var(--secondary);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.heroDescription {
+  max-width: 610px;
+
+  margin: 1.6rem 0 0;
+
+  color: var(--text-primary);
+
+  opacity: 0.68;
+
+  font-size: 1.02rem;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   HIGHLIGHTS
+   ========================================================= */
+
+.highlights {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.7rem;
+
+  margin-top: 1.5rem;
+}
+
+
+.highlight {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 0.45rem;
+
+  padding: 0.5rem 0.75rem;
+
+  border-radius: 999px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--card-bg) 80%,
+      transparent
+    );
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--text-primary) 8%,
+      transparent
+    );
+
+  color: var(--text-primary);
+
+  opacity: 0.82;
+
+  font-size: 0.78rem;
+
+  font-weight: 500;
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+
+.highlight:hover {
+  transform: translateY(-2px);
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--accent) 30%,
+      transparent
+    );
+}
+
+
+.highlightDot {
+  width: 5px;
+  height: 5px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.actionButtons {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.9rem;
+
+  margin-top: 2rem;
+}
+
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 0.55rem;
+
+  min-height: 48px;
+
+  padding: 0.8rem 1.35rem;
+
+  border-radius: 11px;
+
+  text-decoration: none;
+
+  font-size: 0.92rem;
+
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+.primaryButton {
+  background: var(--accent);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 20px
+    color-mix(
+      in srgb,
+      var(--accent) 20%,
+      transparent
+    );
+}
+
+
+.primaryButton:hover {
+  transform: translateY(-3px);
+
+  background: var(--accent);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 26px
+    color-mix(
+      in srgb,
+      var(--accent) 28%,
+      transparent
+    );
+}
+
+
+.secondaryButton {
+  background:
+    linear-gradient(
+      100deg,
+      var(--accent),
+      var(--secondary)
+    );
+
+  color: #ffffff;
+
+  box-shadow:
+    0 8px 20px
+    color-mix(
+      in srgb,
+      var(--secondary) 15%,
+      transparent
+    );
+}
+
+
+.secondaryButton:hover {
+  transform: translateY(-3px);
+
+  color: #ffffff;
+
+  box-shadow:
+    0 12px 26px
+    color-mix(
+      in srgb,
+      var(--secondary) 25%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   SOCIAL AREA
+   ========================================================= */
+
+.socialArea {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-top: 1.8rem;
+}
+
+
+.socialLabel {
+  color: var(--text-primary);
+
+  opacity: 0.4;
+
+  font-size: 0.68rem;
+
+  font-weight: 700;
+
+  letter-spacing: 1.5px;
+}
+
+
+.socialLinks {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid
+    color-mix(
+      in srgb,
+      var(--text-primary) 10%,
+      transparent
+    );
+
+  border-radius: 50%;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--card-bg) 80%,
+      transparent
+    );
+
+  color: var(--text-primary);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  font-size: 0.9rem;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+
+.socialIcon:hover {
+  transform: translateY(-3px);
+
+  color: var(--accent);
+
+  border-color:
+    color-mix(
+      in srgb,
+      var(--accent) 35%,
+      transparent
+    );
+
+  background:
+    color-mix(
+      in srgb,
+      var(--accent) 8%,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   RIGHT VISUAL
+   ========================================================= */
+
+.heroVisual {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 500px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   PROFILE WRAPPER
+   ========================================================= */
+
+.profileWrapper {
+  position: relative;
+
+  width: 420px;
+  height: 480px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+
+.profileImage {
+  position: relative;
+
+  width: 300px;
+  height: 390px;
+
+  overflow: hidden;
+
+  border-radius: 100%;
+
+  z-index: 2;
+
+  box-shadow:
+    0 20px 45px
+    color-mix(
+      in srgb,
+      var(--text-primary) 8%,
+      transparent
+    );
+}
+
+
+.profileImage img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  object-position: center;
+
+  border-radius: 3;
+}
+/* =========================================================
+   DECORATIVE CIRCLES
+   ========================================================= */
+
+.decorativeCircle {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: 1;
+}
+
+
+/* Blue decorative light */
+
+.circleTop {
+  width: 110px;
+  height: 110px;
+
+  top: 15px;
+  left: 25px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--accent) 15%,
+      transparent
+    );
+
+  filter: blur(0.2px);
+}
+
+
+/* Peach decorative light */
+
+.circleBottom {
+  width: 125px;
+  height: 125px;
+
+  right: 15px;
+  bottom: 15px;
+
+  background:
+    color-mix(
+      in srgb,
+      var(--secondary) 17%,
+      transparent
+    );
+
+  filter: blur(0.2px);
+}
+
+
+/* =========================================================
+   FLOATING ANIMATION
+   ========================================================= */
+
+@keyframes gentleFloat {
+
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+  .heroSection {
+    padding-top: 6rem;
+  }
+
+
+  .heroContainer {
+    grid-template-columns: 1fr;
+
+    gap: 3rem;
+  }
+
+
+  .heroContent {
+    max-width: 750px;
+
+    margin: 0 auto;
+
+    text-align: center;
+  }
+
+
+  .eyebrow,
+  .titleAccent,
+  .roleLine,
+  .highlights,
+  .actionButtons,
+  .socialArea {
+    justify-content: center;
+  }
+
+
+  .heroDescription {
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  /* -----------------------------------------
+     TABLET IMAGE
+     ----------------------------------------- */
+
+  .heroVisual {
+    min-height: 430px;
+  }
+
+
+  .profileWrapper {
+    width: 360px;
+    height: 430px;
+  }
+
+
+  .profileImage {
+    width: 270px;
+    height: 350px;
+  }
+
+
+  .profileImage > div {
+    background-position: center 35%;
+  }
+
+
+  .circleTop {
+    width: 85px;
+    height: 85px;
+
+    top: 15px;
+    left: 18%;
+  }
+
+
+  .circleBottom {
+    width: 100px;
+    height: 100px;
+
+    right: 16%;
+    bottom: 10px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .heroSection {
+    min-height: auto;
+
+    padding: 5.5rem 0 4rem;
+  }
+
+
+  .heroContainer {
+    width: min(92%, 500px);
+
+    gap: 2.5rem;
+  }
+
+
+  .heroTitle {
+    font-size: clamp(3rem, 15vw, 4rem);
+
+    letter-spacing: -2px;
+  }
+
+
+  .roleLine {
+    font-size: 1.1rem;
+  }
+
+
+  .heroDescription {
+    font-size: 0.94rem;
+
+    line-height: 1.7;
+  }
+
+
+  .highlights {
+    gap: 0.5rem;
+  }
+
+
+  .highlight {
+    font-size: 0.72rem;
+  }
+
+
+  .actionButtons {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: min(100%, 320px);
+
+    margin-left: auto;
+
+    margin-right: auto;
+  }
+
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+
+  .socialArea {
+    flex-direction: column;
+
+    gap: 0.7rem;
+  }
+
+
+  /* -----------------------------------------
+     MOBILE IMAGE
+     ----------------------------------------- */
+
+  .heroVisual {
+    min-height: 410px;
+  }
+
+
+  .profileWrapper {
+    width: 320px;
+    height: 400px;
+  }
+
+
+  .profileImage {
+    width: 245px;
+    height: 320px;
+  }
+
+
+  .profileImage > div {
+    background-position: center 35%;
+  }
+
+
+  .circleTop {
+    width: 65px;
+    height: 65px;
+
+    top: 20px;
+    left: 4%;
+  }
+
+
+  .circleBottom {
+    width: 85px;
+    height: 85px;
+
+    right: 3%;
+    bottom: 10px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .heroSection {
+    padding-top: 5rem;
+  }
+
+
+  .heroTitle {
+    font-size: 2.8rem;
+  }
+
+
+  .roleLine {
+    font-size: 1rem;
+  }
+
+
+  .highlights {
+    flex-direction: column;
+
+    align-items: center;
+  }
+
+
+  .profileWrapper {
+    width: 285px;
+    height: 370px;
+  }
+
+
+  .profileImage {
+    width: 220px;
+    height: 295px;
+  }
+
+
+  .profileImage > div {
+    background-position: center 35%;
+  }
+
+
+  .circleTop {
+    width: 55px;
+    height: 55px;
+
+    left: 2%;
+  }
+
+
+  .circleBottom {
+    width: 70px;
+    height: 70px;
+
+    right: 1%;
+  }
+}
