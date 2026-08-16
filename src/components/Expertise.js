@@ -92,7 +92,6 @@ export default function Expertise() {
   const [visibleCards, setVisibleCards] = useState(new Set());
 
   const cardRefs = useRef([]);
-  const sectionRef = useRef(null);
 
   /*
    * Observe each card individually.
